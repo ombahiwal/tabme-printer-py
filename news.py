@@ -58,7 +58,7 @@ def check_orders():
     print_text =""
     for order in data['orders']:
         item_data = []
-        order_str = center("tabme.")
+        order_str = center("tabme.") + "\n"
 
         # Restuarant Name
         order_str += textwrap.fill(order['rname'], 28)+"\n"
@@ -103,15 +103,13 @@ def check_orders():
     #     printer.write(str(news) + "\n\n")
     printer.close()
 
-    # os.system('paps --left-margin=15 --font=\"Courier, Monospace Bold Italic 9\" print.txt | lp')
+    os.system('paps --left-margin=15 --font=\"Courier, Monospace Bold Italic 9\" print.txt | lp')
 
-check_orders()
+
 
 if __name__ == '__main__':
     # while True:
-    print("1w")
-    x = (' ' * 20)
+    check_orders()
 
-    print(x)
     # check_orders()
         # time.sleep(10)

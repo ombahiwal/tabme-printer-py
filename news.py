@@ -103,7 +103,7 @@ def check_orders():
     #     printer.write(str(news) + "\n\n")
     printer.close()
 
-    os.system('paps --left-margin=15 --font=\"Courier, Monospace Bold Italic 9\" print.txt | lp')
+    os.system('paps --left-margin=0 --font=\"Courier, Monospace Bold Italic 9\" print.txt | lp')
 
 
 

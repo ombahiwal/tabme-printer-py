@@ -1,0 +1,58 @@
+        tabme.
+Asian Fusion
+      Pickup 992
+
+Item                  EUR
+----------------  -------
+Pepperoni     x1     3.50
+Omelette      x1     4.90
+Total                8.40
+
+Omkar Bahiwal
+PID-CA5CA7 | OID-CA5CA8
+        tabme.
+Asian Fusion
+       Table #0
+
+Item                  EUR
+----------------  -------
+French Fries  x1     3.11
+Total                3.11
+
+Omkar Bahiwal
+PID-CA5CA1 | OID-CA5CA2
+        tabme.
+Asian Fusion
+       Table #0
+
+Item                    EUR
+------------------  -------
+Chicken Tikka Max1     9.00
+Total                  9.00
+
+Omkar Bahiwal
+PID-CA5C89 | OID-CA5C8A
+        tabme.
+Asian Fusion
+       Table #1
+
+Item                  EUR
+----------------  -------
+Arrabbiata    x1     2.00
+Total                2.00
+
+Lukas Bork
+PID-CA5C6D | OID-CA5C6E
+        tabme.
+Asian Fusion
+       Table #0
+
+Item                  EUR
+----------------  -------
+Sauerbraten   x1    70.00
+Total               70.00
+
+Harry Potter
+PID-CA5C07 | OID-CA5C08
+
+

@@ -11,7 +11,7 @@ from tabulate import tabulate
 global printed_orders
 global line_len
 global API_DS
-API_DS = "http://localhost:8000/api/v1/ds/print/"
+API_DS = "http://api.tabme.io/api/v1/ds/print/"
 printed_orders = []
 line_len = 22
 
@@ -104,7 +104,7 @@ def check_orders():
     print_text = get_print_text(data)
     printer.write(str(print_text) + "\n\n")
     printer.close()
-    os.system('paps --left-margin=15 --font=\"Monospace\" --cpi 15 print2.txt | lp')
+    os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 15 print2.txt | lp')
 
 
 if __name__ == '__main__':

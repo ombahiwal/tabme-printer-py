@@ -20,7 +20,6 @@ def center(t):
 def order_type(cart, id):
     print(cart)
     tnum = int(cart['tablenum'])
-
     label = "Table #"
     if tnum < 0:
         if tnum == -1:
@@ -43,6 +42,47 @@ def max_len(s, l=line_len-6, q=1):
     q = "x"+str(q)
     return s + (" "*(l - len(s) - len(q))) + q
 
+def get_print_text(data):
+    print_text = ""
+    for order in data['orders']:
+
+        if order['_id'] not in printed_orders:
+            printed_orders.append(order['_id'])
+        else:
+            continue
+
+        item_data = []
+        order_str = center("tabme.") + "\n"
+
+        # Restuarant Name
+        order_str += textwrap.fill(order['rname'], line_len) + "\n"
+
+        # Type and Number
+        order_str += order_type(order['cart'], order['_id']) + "\n"
+        # print()
+
+        # Dishes
+        for item in order['cart']['dishes']:
+            # amount = str('%.2f' % float(item['totalPrice']))
+            item_data.append([max_len(item['name']), float(item['totalPrice'])])
+            # Dish Customisation
+
+        # Add Total
+        item_data.append(["Total", float(order['cart']['totalCost'])])
+
+        order_str += "\n" + tabulate(item_data, headers=['Item', "  " + order['cart']['currency']], floatfmt=".2f")
+
+        # user name
+        order_str += "\n\n" + textwrap.fill(order['user']['fname'] + " " + order['user']['lname'], 28)
+
+        # Payment and Order ID
+        order_str += '\nPID-' + order['paymentInfo'][18:].upper() + " | OID-" + order['_id'][18:].upper()
+
+        # main text
+        print_text += order_str + "\n"
+    return print_text
+
+
 def check_orders():
     print('cycle')
     url = ('http://api.tabme.io/api/v1/ds/' + 'order/fetch/open')
@@ -57,49 +97,10 @@ def check_orders():
 
     printer = open("print.txt", "w")
 
-    print_text =""
-    for order in data['orders']:
-
-        if order['_id'] not in printed_orders:
-            printed_orders.append(order['_id'])
-        else:
-            continue
-
-        item_data = []
-        order_str = center("tabme.") + "\n"
-
-        # Restuarant Name
-        order_str += textwrap.fill(order['rname'], line_len)+"\n"
-
-        # Type and Number
-        order_str += order_type(order['cart'], order['_id'])+"\n"
-        # print()
-
-        # Dishes
-        for item in order['cart']['dishes']:
-            # amount = str('%.2f' % float(item['totalPrice']))
-            item_data.append([max_len(item['name']), float(item['totalPrice'])])
-            # Dish Customisation
-
-        # Add Total
-        item_data.append(["Total", float(order['cart']['totalCost'])])
-
-        order_str += "\n"+tabulate(item_data, headers=['Item',  "  "+order['cart']['currency']], floatfmt=".2f")
-
-        # user name
-        order_str += "\n\n"+textwrap.fill(order['user']['fname']+" "+order['user']['lname'],28)
-
-        # Payment and Order ID
-        order_str += '\nPID-'+order['paymentInfo'][18:].upper()+" | OID-" +order['_id'][18:].upper()
-
-        # main text
-        print_text += order_str + "\n"
-
+    print_text = get_print_text(data)
     printer.write(str(print_text) + "\n\n")
     printer.close()
     os.system('paps --left-margin=5 --font=\"Courier, Monospace Italic 9\" print.txt | lp')
-
-
 
 if __name__ == '__main__':
     while True:

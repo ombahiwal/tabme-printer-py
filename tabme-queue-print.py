@@ -10,7 +10,8 @@ from tabulate import tabulate
 
 global printed_orders
 global line_len
-
+global API_DS
+API_DS = "http://localhost:8000/api/v1/ds/print/"
 printed_orders = []
 line_len = 22
 
@@ -45,8 +46,9 @@ def max_len(s, l=line_len-6, q=1):
 # change fro queue
 def get_print_text(data):
     print_text = ""
-    for order in data['queue']:
-
+    update_url = API_DS + "cloud/rpi/job/dequeue"
+    for jobs in data['queue']:
+        order = jobs['job']
         if order['_id'] not in printed_orders:
             printed_orders.append(order['_id'])
         else:
@@ -81,31 +83,31 @@ def get_print_text(data):
 
         # main text
         print_text += order_str + "\n"
+        # Dequeue Job
+        # jobs
+        print(jobs)
+        requests.post(update_url, data={'job_id': jobs['_id']})
+
     return print_text
 
 
 def check_orders():
     print('cycle')
-    url = ('http://localhost:8000/api/v1/ds/' + 'print/cloud/rpi/job/get')
+    url = (API_DS + 'cloud/rpi/job/get')
     response = requests.post(url, data={'m_id':"5f4298d1a1f2d03aedeb6cb3"})
     data = json.loads(response.text)
-    print(data)
+    # print(data)
+    # if data['success'] == True:
+    #     # print(list(data['queue']))
 
-    if data['success'] == True:
-
-        print(list(data['queue']))
-
-    printer = open("print.txt", "w")
-
+    printer = open("print2.txt", "w")
     print_text = get_print_text(data)
     printer.write(str(print_text) + "\n\n")
     printer.close()
-    os.system('paps --left-margin=5 --font=\"Courier, Monospace Italic 9\" print.txt | lp')
+    os.system('paps --left-margin=15 --font=\"Monospace\" --cpi 15 print2.txt | lp')
+
 
 if __name__ == '__main__':
-    # while True:
-    check_orders()
-        # time.sleep(10)
-    print(printed_orders)
-    # check_orders()
-        # time.sleep(10)
+    while True:
+        check_orders()
+        time.sleep(10)

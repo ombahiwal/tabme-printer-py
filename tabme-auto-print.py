@@ -96,11 +96,10 @@ def check_orders():
         print(list(data['orders']))
 
     printer = open("print.txt", "w")
-
     print_text = get_print_text(data)
     printer.write(str(print_text) + "\n\n")
     printer.close()
-    os.system('paps --left-margin=5 --font=\"Courier, Monospace Italic 9\" print.txt | lp')
+    os.system('paps --left-margin=15 --font=\"Monospace\" --cpi 15 print.txt | lp')
 
 if __name__ == '__main__':
     while True:

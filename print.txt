@@ -1,2 +1,100 @@
 
 
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item              EUR
+----------------  -----
+Daal Batti    x1  24.0
+.Cust2
+. Test
+Daal Batti    x1  26.0
+.Cust2
+. Test
+.Test Cust
+. two
+Total             50.0
+CASH / External
+
+Omkar Bahiwal
+PID-574EAB | OID-574EAC
+2021-07-09 09:10:08
+
+
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item              EUR
+----------------  -----
+Daal Batti    x1  27.0
+.Test Cust
+. one
+. two
+.Cust2
+. Test
+Total             27.0
+CASH / External
+
+Omkar Bahiwal
+PID-574EA4 | OID-574EA5
+2021-07-09 09:09:24
+
+
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item                EUR
+----------------  -----
+Pepperoni     x1   3.50
+Total              3.50
+CASH / External
+
+Omkar Bahiwal
+PID-574E66 | OID-574E67
+2021-07-09 09:03:53
+
+
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item              EUR
+----------------  -----
+Omelette      x4  3.9
+.Test Cust
+. two
+Total             15.6
+CASH / External
+
+Harry Potter
+PID-574E31 | OID-574E32
+2021-07-08 16:53:19
+
+
+
+        tabme.
+     Asian Fusion
+      Pickup 992
+
+Item              EUR
+----------------  -----
+Pepperoni     x1  3.5
+Omelette      x1  4.9
+.Test Cust
+. one
+. two
+Total             8.4
+CASH / External
+
+Omkar Bahiwal
+PID-CA5CA7 | OID-CA5CA8
+2021-07-07 15:14:57
+
+

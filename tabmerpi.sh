@@ -8,8 +8,8 @@ cd tabme-print
 git init
 git remote add origin https://github.com/ombahiwal/tabme-printer-py
 git pull origin master
-git clone https://github.com/OkkarMin/HOP-H58-RaspberryPi-Driver
 cd ../
+git clone https://github.com/OkkarMin/HOP-H58-RaspberryPi-Driver
 cd HOP-H58-RaspberryPi-Driver
 chmod +x ./install_H58_driver.sh
 ./install_H58_driver.sh

@@ -1,5 +1,5 @@
 sudo apt-get -y update
-sudo apt-get install -y git python3 vim
+sudo apt-get install -y git python3 vim cups
 # sudo apt-get install -y cups ia32-libs gcc-multilib
 pip3 install argparse tabulate requests textwrap3 
 mkdir tabme-print

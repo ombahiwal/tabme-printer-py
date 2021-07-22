@@ -166,9 +166,9 @@ def check_orders():
     # os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print.txt | lp')
 
 if __name__ == '__main__':
-    # while True:
-    check_orders()
-        # time.sleep(10)
+    while True:
+        check_orders()
+        time.sleep(10)
         # print(printed_orders)
     # check_orders()
         # time.sleep(10)

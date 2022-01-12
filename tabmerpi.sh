@@ -12,7 +12,7 @@ cd /home/pi/tabme-printer-py
 git checkout master
 
 # Run on Startup
-echo 'sudo sh /home/pi/tabme-printer-py/update.sh'
+echo 'sudo sh /home/pi/tabme-printer-py/update.sh &'
 echo 'sudo python /home/pi/tabme-printer-py/tabme-auto-print.py &' >> /etc/rc.local
 echo 'sudo python /home/pi/tabme-printer-py/tabme-queue-print.py &' >> /etc/rc.local
 # cd ../
@@ -20,6 +20,7 @@ echo 'sudo python /home/pi/tabme-printer-py/tabme-queue-print.py &' >> /etc/rc.l
 # cd HOP-H58-RaspberryPi-Driver
 # chmod +x ./install_H58_driver.sh
 # ./install_H58_driver.sh
+# check update 1
 cd ../
 git clone https://github.com/LukePrior/Raspberry-Pi-Thermal-Printer
 cd Raspberry-Pi-Thermal-Printer

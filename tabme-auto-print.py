@@ -154,6 +154,7 @@ def check_orders():
     response = requests.post(url, data={'restaurant_id':"603b5814e41f5859a290ec70", 'open':'true'})
     data = json.loads(response.text)
     printer = open("print.txt", "w")
+    printer.close()
     if '-l' in sys.argv:
         print_text = get_print_text2(data)
     else:
@@ -163,7 +164,7 @@ def check_orders():
         os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print.txt | lp')
 #     else:
 #         printer.write(str(""))
-    printer.close()
+    
    
 
 if __name__ == '__main__':

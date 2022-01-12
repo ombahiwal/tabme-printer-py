@@ -8,8 +8,8 @@ git init
 git remote add origin https://github.com/ombahiwal/tabme-printer-py
 git pull origin master
 # Run on Startup
-echo 'python3 /root/tabme-print/tabme-auto-print.py &' >> /etc/rc.local
-echo 'python3 /root/tabme-print/tabme-queue-print.py &' >> /etc/rc.local
+echo 'sudo python3 /root/tabme-print/tabme-auto-print.py &' >> /etc/rc.local
+echo 'sudo python3 /root/tabme-print/tabme-queue-print.py &' >> /etc/rc.local
 # cd ../
 # git clone https://github.com/OkkarMin/HOP-H58-RaspberryPi-Driver
 # cd HOP-H58-RaspberryPi-Driver

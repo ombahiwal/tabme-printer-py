@@ -183,16 +183,14 @@ def check_orders():
         print_text = get_print_text2(data)
     else:
         print_text = get_print_text(data)
-    
+    printer.close()
     if len(print_text) > 10:
         printer.write(str(print_text) + "\n\n")
         os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print2.txt | lp')
 #     else:
 #         printer.write(str(""))
-    printer.close()
     
-
-
+    
 if __name__ == '__main__':
     while True:
         check_orders()

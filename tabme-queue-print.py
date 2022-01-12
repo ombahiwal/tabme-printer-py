@@ -188,7 +188,7 @@ def check_orders():
     if len(print_text) > 10:
         printer.write(str(print_text) + "\n\n")
         printer.close()
-        Popen('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print.txt | lp', stdout=PIPE, shell=True).stdout.read()
+        Popen('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print2.txt | lp', stdout=PIPE, shell=True).stdout.read()
 
         # os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print2.txt | lp')
 #     else:

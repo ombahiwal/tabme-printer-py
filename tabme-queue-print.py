@@ -9,6 +9,7 @@ import json
 from tabulate import tabulate
 import sys
 import datetime
+from subprocess import (PIPE, Popen)
 global printed_orders
 global line_len
 global API_DS
@@ -172,9 +173,9 @@ def get_print_text(data):
 def check_orders():
     print('cycle')
     url = (API_DS + 'cloud/rpi/job/get')
-    response = requests.post(url, data={'m_id':"603b5814e41f5859a290ec70"})
+    response = requests.post(url, data={'m_id':"5f4298d1a1f2d03aedeb6cb3"})
     data = json.loads(response.text)
-    # print(data)
+    print(data)
     # if data['success'] == True:
     #     # print(list(data['queue']))
 
@@ -183,15 +184,21 @@ def check_orders():
         print_text = get_print_text2(data)
     else:
         print_text = get_print_text(data)
-    printer.close()
+    
     if len(print_text) > 10:
         printer.write(str(print_text) + "\n\n")
-        os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print2.txt | lp')
+        printer.close()
+        Popen('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print.txt | lp', stdout=PIPE, shell=True).stdout.read()
+
+        # os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print2.txt | lp')
 #     else:
 #         printer.write(str(""))
     
-    
+
 if __name__ == '__main__':
     while True:
-        check_orders()
+        try:
+            check_orders()
+        except Exception as e:
+            print("ERROR in printing", e)
         time.sleep(10)

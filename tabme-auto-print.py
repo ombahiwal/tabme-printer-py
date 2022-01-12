@@ -9,6 +9,7 @@ import json
 from tabulate import tabulate
 import datetime
 import sys
+from subprocess import (PIPE, Popen)
 
 global printed_orders
 global line_len
@@ -16,7 +17,7 @@ printed_orders = []
 line_len = 22
 
 def center(t):
-    return " "*(int(line_len/2-len(t)/2))+str(t)
+    return " " * (int(line_len/2-len(t)/2))+str(t)
 
 def order_type(cart, id):
     # print(cart)
@@ -45,7 +46,6 @@ def max_len(s,q=1, l=line_len-5, ):
         q = "x"+str(q)
     else:
         q = ""
-
     return s + (" "*(l - len(s) - len(q) - 1)) + q
 
 def get_print_text2(data):
@@ -96,7 +96,6 @@ def get_print_text2(data):
         # main text
         print_text += order_str + "\n"
     return print_text
-
 
 def get_print_text(data):
     print_text = ""
@@ -154,22 +153,26 @@ def check_orders():
     response = requests.post(url, data={'restaurant_id':"603b5814e41f5859a290ec70", 'open':'true'})
     data = json.loads(response.text)
     printer = open("print.txt", "w")
-    printer.close()
+    
     if '-l' in sys.argv:
         print_text = get_print_text2(data)
     else:
         print_text = get_print_text(data)
     if len(print_text) > 10:
         printer.write(str(print_text) + "\n\n")
-        os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print.txt | lp')
+        printer.close()
+        Popen('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print.txt | lp', stdout=PIPE, shell=True).stdout.read()
+        # os.system('paps --left-margin=14 --font=\"Monospace\" --cpi 17 print.txt | lp')
 #     else:
 #         printer.write(str(""))
     
-   
 
 if __name__ == '__main__':
     while True:
-        check_orders()
+        try:
+            check_orders()
+        except Exception as e:
+            print("ERROR in printing", e)
         time.sleep(10)
         # print(printed_orders)
     # check_orders()

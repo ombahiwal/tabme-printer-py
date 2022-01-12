@@ -12,7 +12,7 @@ cd /home/pi/tabme-printer-py
 git checkout master
 
 # Run on Startup
-echo 'sudo sh /home/pi/tabme-printer-py/update.sh &' >> /etc/rc.local
+echo 'sudo python /home/pi/tabme-printer-py/update.py &' >> /etc/rc.local
 echo 'sudo python /home/pi/tabme-printer-py/tabme-auto-print.py &' >> /etc/rc.local
 echo 'sudo python /home/pi/tabme-printer-py/tabme-queue-print.py &' >> /etc/rc.local
 # cd ../

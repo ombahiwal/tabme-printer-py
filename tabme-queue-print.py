@@ -56,10 +56,10 @@ def get_print_text2(data):
     update_url = API_DS + "cloud/rpi/job/dequeue"
     for jobs in data['queue']:
         order = jobs['job']
-        if order['_id'] not in printed_orders:
-            printed_orders.append(order['_id'])
-        else:
-            continue
+        # if order['_id'] not in printed_orders:
+        #     printed_orders.append(order['_id'])
+        # else:
+        #     continue
 
         item_data = []
         order_str = center("tabme.") + "\n"
@@ -116,10 +116,10 @@ def get_print_text(data):
     update_url = API_DS + "cloud/rpi/job/dequeue"
     for jobs in data['queue']:
         order = jobs['job']
-        if order['_id'] not in printed_orders:
-            printed_orders.append(order['_id'])
-        else:
-            continue
+        # if order['_id'] not in printed_orders:
+        #     printed_orders.append(order['_id'])
+        # else:
+        #     continue
 
         item_data = []
         order_str = center("tabme.") + "\n"

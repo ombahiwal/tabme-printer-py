@@ -1,7 +1,7 @@
 sudo apt-get -y update
 sudo apt-get install -y git python3 vim cups
 # sudo apt-get install -y cups ia32-libs gcc-multilib
-pip3 install argparse tabulate requests textwrap3 
+pip3 install argparse tabulate requests textwrap3 python-dotenv
 # mkdir tabme-print
 # cd tabme-print
 # git init

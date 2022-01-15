@@ -1,4 +1,4 @@
 import os
 from subprocess import (PIPE, Popen)
 # update test
-Popen('cd /home/pi/tabme-printer-py/ && git pull origin master && cd -', stdout=PIPE, shell=True).stdout.read()
+Popen('sudo cd /home/pi/tabme-printer-py/ && sudo git pull origin master && sudo cd -', stdout=PIPE, shell=True).stdout.read()

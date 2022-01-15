@@ -2,19 +2,145 @@
 
 
         tabme.
-      SUPERBOWL
-      Pickup 920
+     Asian Fusion
+       Table #0
 
 Item              EUR
 ----------------  -----
-Falafel Bowl  x1  7.9
-.Kohlenhydrate
-. Jasmin Duftre
-Total             7.9
-CASH / External
+French Fries  x1  4.11
+.Seasoning
++ Peri Peri
++ Oregano
+Total             4.11
+Paypal Client
 
-Benjamin H
-PID-4931F7 | OID-4931F8
-2021-07-22 07:17:14
+Omkar Bahiwal
+
+PID-5F20AF | OID-5F20B0
+Placed: 2022-01-15
+18:52:20
+
+
+
+        tabme.
+     Asian Fusion
+      Pickup 65
+
+Item                EUR
+----------------  -----
+Red Velvet    x1   1.22
+Cake
+Total              1.22
+Paypal Client
+
+Omkar Bahiwal
+
+Pickup-Time
+2022-01-15T12:44:00.00
+0Z
+
+PID-5F2098 | OID-5F2099
+Placed: 2022-01-15
+11:45:08
+
+
+
+        tabme.
+     Asian Fusion
+     Delivery 14
+
+Item                EUR
+----------------  -----
+Ramen         x2  18.50
+Delivery fee       1.20
+Total             38.20
+Paypal Client
+
+Omkar Bahiwal
+Flat no. 507 Wing A
+Raheja Residency
+
+PID-5F2065 | OID-5F2066
+Placed: 2022-01-13
+16:12:18
+
+
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item              EUR
+----------------  -----
+Manchurian    x1  5.0
+Balls
+.Choice
++ with Gravy
+Total             5.0
+Paypal Client
+
+Omkar Bahiwal
+
+PID-E680C4 | OID-E680C5
+Placed: 2022-01-13
+11:09:12
+
+
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item              EUR
+----------------  -----
+French Fries  x1  3.61
+.Seasoning
++ Peri Peri
+Total             3.61
+Paypal Client
+
+Omkar Bahiwal
+
+PID-5B0EBF | OID-5B0EC0
+Placed: 2022-01-13
+10:48:23
+
+
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item                EUR
+----------------  -----
+Yakisoba      x1  12.99
+Total             12.99
+Paypal Client
+
+Omkar Bahiwal
+
+PID-AD0B5E | OID-AD0B5F
+Placed: 2022-01-12
+11:02:39
+
+
+
+        tabme.
+     Asian Fusion
+       Table #0
+
+Item                EUR
+----------------  -----
+Yakisoba      x1  12.99
+Tip                0.65
+Total             13.64
+Paypal Client
+
+Omkar Bahiwal
+
+PID-AD0B39 | OID-AD0B3A
+Placed: 2022-01-11
+23:19:17
+
 
 
